@@ -1,0 +1,70 @@
+virtualenv venv
+.\venv\Scripts\activate
+
+ pip install rasa
+ pip install rasa[spacy]
+$ python -m spacy download en_core_web_md
+$ python -m spacy link en_core_web_md en
+
+ open the terminal in the project directory and run the below commands
+
+rasa train
+
+
+ pip install rasa-sdk
+
+python -m spacy download en_core_web_md
+python -m spacy link en_core_web_md en
+
+
+Once the bot has been trained, run the bot using the below commands
+rasa run actions
+
+rasa run -m models --enable-api --cors "*" --debug      --------->its also working
+What is the Sales for Salem Branch?
+
+
+1-	python -m rasa_core_sdk.endpoint --actions actions 
+2-	python -m rasa_core.run -d models/dialogue -u models/nlu --endpoints endpoints.yml
+
+1. Create Project
+	rasa init
+2. Change nlu.md file and train
+	rasa train nlu
+3. Check the Intent details
+	rasa shell nlu
+
+4. after added the custom actions -> run only
+	rasa train	
+
+5. after trained
+	rasa run actions & rasa shell
+	
+What is the Sales for Salem Branch?
+
+
+rasa run --enable-api  --cors "*" --> running correct
+
+https://medium.com/front-end-weekly/how-to-build-awesome-rasa-chatbot-for-a-web-ce4a9acafd3b
+https://medium.com/front-end-weekly/how-to-build-awesome-rasa-chatbot-for-a-web-ce4a9acafd3b
+
+
+python -m rasa_core_sdk.endpoint --actions actions  --enable-api --cors "*" --debug
+
+https://blog.rasa.com/
+
+https://github.com/RasaHQ/rasa-masterclass
+
+
+https://github.com/callicoder/spring-boot-file-upload-download-rest-api-example
+
+
+
+I had made changes to my NLU data and my config.yml file and then I had just trained my nlu model using rasa train nlu command
+then I had started my bot using rasa run -m models --enable-api --cors "*" --debug command and then I got the above error : No policy ensemble or domain set. Skipping action prediction and execution
+then I figured out that I haven’t trained my rasa core model again just I had trained rasa nlu model
+so again I retrained my bot using the rasa train command
+and finally the error was resolved :slight_smile:
+
+
+https://stackoverflow.com/questions/53893780/how-to-deploy-rasa-chatbot
